@@ -1,27 +1,56 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="cn">
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>index</title>
+    <title>liang</title>
+<style>
+body{
+    background-image:url(https://bing.img.run/uhd.php);
+    background-repeat:no-repeat;
+    background-size:100%
+}
+h1{
+    text-align: center;
+    background-color: rgba(255, 255, 255, 0.438);
+    color: #ffffff;
+    text-align: right;
+    font-size:70px;
+    }
+    h1:hover{
+        background-color: rgba(127, 255, 212, 0.386);
+    }
+   
+	span{
+				background:linear-gradient(to right,#1b27cf,#3eed27)no-repeat right bottom;
+			background-size: 0px 5px;
+			transition: background-size 2000ms;
+			}
+			span:hover{
+				background-position-x:left;
+				background-size: 100% 5px;;
+</style>
+
 </head>
 <body>
-    <h1>hao<h1>
-        <div id="tp-weather-widget"></div>
+    <!-- 天气的实现 -->
+    <div id="tp-weather-widget"></div>
   <script>
     (function(a,h,g,f,e,d,c,b){b=function(){d=h.createElement(g);c=h.getElementsByTagName(g)[0];d.src=e;d.charset="utf-8";d.async=1;c.parentNode.insertBefore(d,c)};a["SeniverseWeatherWidgetObject"]=f;a[f]||(a[f]=function(){(a[f].q=a[f].q||[]).push(arguments)});a[f].l=+new Date();if(a.attachEvent){a.attachEvent("onload",b)}else{a.addEventListener("load",b,false)}}(window,document,"script","SeniverseWeatherWidget","//cdn.sencdn.com/widget2/static/js/bundle.js?t="+parseInt((new Date().getTime() / 100000000).toString(),10)));
     window.SeniverseWeatherWidget('show', {
-      flavor: "slim",
+      flavor: "bubble",
       location: "WTEMH46Z5N09",
       geolocation: true,
       language: "auto",
       unit: "c",
       theme: "auto",
       token: "fec29e8b-7018-4238-8636-a5f3f808cd5b",
-      hover: "always",
+      hover: "enabled",
       container: "tp-weather-widget"
     })
   </script>
+<h1><br><span>这是liAng的个人主页</span><br>&nbsp;</h1>
+
 </body>
 </html>
