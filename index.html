@@ -3,12 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
     <title>liang</title>
 <style>
 body{
-    background-image:url(https://bing.img.run/uhd.php);
-    background-repeat:no-repeat;
+    background-image:url(https://bing.img.run/uhd.php),url(https://img2.baidu.com/it/u=1778825085,1253560068&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=834);
+    background-repeat:no-repeat,repeat;
+    background-position: center top,center bottom;
     background-size:100%
 }
 h1{
@@ -21,15 +22,23 @@ h1{
     h1:hover{
         background-color: rgba(127, 255, 212, 0.386);
     }
+    #api-data{
+      text-align: center;
+      font-size: 28px;
+      color: white;
+    text-shadow: 0px 0px 15px #00FFFF,0px 0px 15px #00FFFF,0px 0px 15px #00FFFF;
+        }
+    
+    
    
-	span{
+	span.aaa{
 				background:linear-gradient(to right,#1b27cf,#3eed27)no-repeat right bottom;
 			background-size: 0px 5px;
-			transition: background-size 2000ms;
+			transition: background-size 1500ms;
 			}
-			span:hover{
+			span.aaa:hover{
 				background-position-x:left;
-				background-size: 100% 5px;;
+				background-size: 100% 5px;
 </style>
 
 </head>
@@ -50,7 +59,28 @@ h1{
       container: "tp-weather-widget"
     })
   </script>
-<h1><br><span>这是liAng的个人主页</span><br>&nbsp;</h1>
 
+  <!-- 古诗的实现 -->
+	<script>
+		// API URL
+		var url = "https://api.7585.net.cn/shici/api.php";
+
+		// 发送请求
+		fetch(url)
+		.then(function(response) {
+		    return response.json();
+		})
+		.then(function(data) {
+		    // 获取数据的特定部分
+		    var name = data.hitokoto;
+		    
+
+		    // 在HTML中显示数据
+		    document.getElementById("api-data").innerHTML =  name ;
+		});
+	</script>
+  
+ <h1><br><span class="aaa">liAng的主页</span><br>&nbsp;</h1>
+<div id="api-data"></div>
 </body>
 </html>
