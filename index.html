@@ -6,21 +6,89 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0"  >
     <title>liang</title>
 <style>
+
+/* <!--导航栏样式 --> */
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  font-size: 20px;
+  overflow: hidden;
+  background-color: #ffffff00;
+  position: -webkit-sticky; /* Safari */
+  position: sticky;
+  top: 0;
+}
+
+li {
+  float: right;
+}
+
+li a {
+  display: block;
+  color: rgb(188, 125, 218);
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  background-color: #ffffff;
+}
+
+li a:hover {
+  background-color: #ffffff97;
+  text-decoration: underline pink 4px;
+  animation: myanimation 0.5s ease;
+ 
+}
+a {
+  position: relative;
+  text-decoration: none;
+}
+
+a:before {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 0;
+  height: 8px;
+  background-color:pink;
+  transform: translateX(-50%);
+  transition: width 0.3s ease-in-out;
+}
+
+a:hover:before {
+  width: 100%;
+}
+
+
+@keyframes myanimation{
+0%{transform: scale(1);}
+50%{transform: scale(1.2);}
+100%{transform: scale(1);}
+}
+
+/* .active {
+  background-color: #14dfa9;
+} */
+
+/* <!-- 主体背景 --> */
 body{
     background-image:url(https://bing.img.run/uhd.php),url(https://img2.baidu.com/it/u=1778825085,1253560068&fm=253&fmt=auto&app=138&f=JPEG?w=500&h=834);
     background-repeat:no-repeat,repeat;
     background-position: center top,center bottom;
     background-size:100%
 }
+
+/* <!-- 文本及样式 --> */
 h1{
     text-align: center;
     background-color: rgba(255, 255, 255, 0.438);
     color: #ffffff;
     text-align: right;
-    font-size:70px;
+    font-size:60px;
     }
     h1:hover{
-        background-color: rgba(127, 255, 212, 0.386);
+        background-color: rgba(127, 236, 255, 0.386);
     }
     #api-data{
       text-align: center;
@@ -39,6 +107,54 @@ h1{
 			span.aaa:hover{
 				background-position-x:left;
 				background-size: 100% 5px;
+      }
+     #zhong{
+      height: 1400px;
+      margin-top: 500px;
+      text-align: center;
+     }   
+     #zhong span{
+      color: #ffffff;
+      letter-spacing: 2px;
+      line-height: 2;
+     
+     }
+     #zhong:hover{
+      color: rgb(185, 45, 220);
+     }
+     /* #zhong #bottom{
+      color: #3eed27;
+      bottom: 0;
+      font-size: 19px;
+      display: flex;
+      align-items: flex-end;
+     } */
+
+/* <!-- 三角形 --> */
+     #triangle {
+  width: 0;
+  height: 0;
+  border-left: 70px solid transparent;
+  border-right: 70px solid transparent;
+  border-bottom: 90px solid rgba(53, 19, 203, 0.557);
+  position: absolute;
+}
+
+.rotate {
+  -webkit-animation: rotate-animation 3s linear infinite;
+  animation: rotate-animation 3s linear infinite;
+}
+
+@-webkit-keyframes rotate-animation {
+  from { -webkit-transform: rotate(0deg); }
+  to { -webkit-transform: rotate(360deg); }
+}
+
+@keyframes rotate-animation {
+  from { transform: rotate(0deg); }
+  to { transform: rotate(360deg); }
+}
+
 </style>
 
 </head>
@@ -79,8 +195,30 @@ h1{
 		    document.getElementById("api-data").innerHTML =  name ;
 		});
 	</script>
-  
+  <ul>
+    <strong>
+  <li><a class="active" href="#tp-weather-widget">主页</a></li>
+  <li><a href="#zhong">存档</a></li>
+  <li><a href="#contact">丰富</a></li>
+</strong>
+</ul>
  <h1><br><span class="aaa">liAng的主页</span><br>&nbsp;</h1>
 <div id="api-data"></div>
-</body>
+<div id="zhong"><h2>TA的半生</h2>
+<span>他出生在2003年，生活在一个偏远的农村，从小和他的奶奶一起生活。他从小就长得不高，所以经常被别人当成小朋友看待。他小时候不仅没有朋友也不会交际，经常一个人默默地玩耍，而且成绩很差。虽然他很用功学习，但是成绩却总是倒数。因为这个原因，他时常受到老师的批评和同学的嘲笑，但是他并没有放弃，还是努力地学习，期望有一天能够改变自己的命运。<br><br>
+  幸运的是，在初中时候，他结交了一大群志同道合，热爱学习和生活的朋友，在互相的学习和娱乐中，度过精彩愉快的3年时光，进入了痛苦且快乐的高中生活。<br><br>
+  经过多年的努力，他终于考上了大学，虽然成绩不是很好，进入的是一个普通的本科专业，但是他变得热爱学习和生活。成功地走出了那个让人难以忘怀的故乡，踏上异乡的旅行。但是前路困难，还会有很多考验。
+
+</span><br>
+<!-- <span id="bottom"> -->
+  <!-- QQ：3210464235 -->
+<!-- </span> -->
+
+
+<div id="triangle"></div>
+<script>
+  const triangle = document.getElementById('triangle');
+triangle.classList.add('rotate');
+
+</script></div>
 </html>
