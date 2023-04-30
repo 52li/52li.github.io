@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.5"  >
+    <meta name="viewport" content="width=device-width, initial-scale=1.0,maximum-scale=1.5" >
     <title>liang</title>
 <style>
 
@@ -36,18 +36,18 @@ li a {
   background-color: #11ae6700;
   }
 
-li a:hover {
+li a.nav:hover {
   background-color: #ffffff97;
   /* text-decoration: underline pink 4px; */
   animation: myanimation 0.5s ease;
  
 }
-a {
+a.nav {
   position: relative;
   text-decoration: none;
 }
 
-a:before {
+a.nav:before {
   content: "";
   position: absolute;
   bottom: 0;
@@ -59,7 +59,7 @@ a:before {
   transition: width 0.3s ease-in-out;
 }
 
-a:hover:before {
+a.nav:hover:before {
   width: 100%;
 }
 
@@ -69,10 +69,6 @@ a:hover:before {
 50%{transform: scale(1.2);}
 100%{transform: scale(1);}
 }
-
-/* .active {
-  background-color: #14dfa9;
-} */
 
 /* <!-- 主体背景 --> */
 body{
@@ -85,15 +81,11 @@ body{
 /* <!-- 文本及样式 --> */
 h1{
     text-align: center;
-    background-color: rgba(255, 255, 255, 0.438);
-    color: #ffffff;
-    text-align: right;
+    color: #ffffffd5;
     font-size:60px;
     text-shadow: 2px 2px 2px blueviolet;
     }
-    h1:hover{
-        background-color: rgba(127, 236, 255, 0.386);
-    }
+    
     #api-data{
       text-align: center;
       font-size: 28px;
@@ -113,9 +105,10 @@ h1{
 				background-size: 100% 5px;
       }
      #zhong{
-      height: 1400px;
-      margin-top: 500px;
+      /* height: 1400px; */
+      margin-top: 400px;
       text-align: center;
+      margin-bottom: 200px;
      }   
      #zhong span{
       color: #ffffff;
@@ -126,14 +119,7 @@ h1{
      #zhong:hover{
       color: rgb(185, 45, 220);
      }
-     /* #zhong #bottom{
-      color: #3eed27;
-      bottom: 0;
-      font-size: 19px;
-      display: flex;
-      align-items: flex-end;
-     } */
-
+     
 /* <!-- 三角形 --> */
      #triangle {
   width: 0;
@@ -161,11 +147,10 @@ h1{
 html{
   scroll-behavior: smooth;
 }
-	
 
 </style>
-
 </head>
+
 <body>
     <!-- 天气的实现 -->
     <div id="tp-weather-widget"></div>
@@ -205,14 +190,14 @@ html{
 	</script>
   <ul>
     <strong>
-  <li><a class="active" href="#tp-weather-widget">主页</a></li>
-  <li><a href="#zhong">记录</a></li>
+  <li><a class="nav" href="#tp-weather-widget">主页</a></li>
+  <li><a class="nav" href="#zhong">记录</a></li>
   <!-- <li><a href="#contact">丰富</a></li> -->
 </strong>
 </ul>
- <h1><br><span class="aaa">liAng的主页</span><br>&nbsp;</h1>
+ <h1><br><span class="aaa">liAng的主页</span><br><br><br></h1>
 <div id="api-data"></div>
-<div id="zhong"><h2><br><br><br>TA的半生</h2>
+<div id="zhong"><h2> <br><br><br> TA的半生</h2>
 <span>他出生在2003年，生活在一个偏远的农村，从小和他的奶奶一起生活。他从小就长得不高，所以经常被别人当成小朋友看待。他小时候不仅没有朋友也不会交际，经常一个人默默地玩耍，而且成绩很差。虽然他很用功学习，但是成绩却总是倒数。因为这个原因，他时常受到老师的批评和同学的嘲笑，但是他并没有放弃，还是努力地学习，期望有一天能够改变自己的命运。<br><br>
   幸运的是，在初中时候，他结交了一大群志同道合，热爱学习和生活的朋友，在互相的学习和娱乐中，度过精彩愉快的3年时光，进入了痛苦且快乐的高中生活。<br><br>
   经过多年的努力，他终于考上了大学，虽然成绩不是很好，进入的是一个普通的本科专业，但是他变得热爱学习和生活。成功地走出了那个让人难以忘怀的故乡，踏上异乡的旅行。但是前路困难，还会有很多考验。
