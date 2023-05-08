@@ -251,7 +251,14 @@ html{
 </div>
 <br><br><br>
 <div id="text-container"></div>
+<div id="kaishi"></div>
 <script>
+  const section = document.querySelector('#kaishi');
+
+const observer = new IntersectionObserver((entries) => {
+  if (entries[0].isIntersecting) {
+    // 执行逐字效果代码
+    
   var text = "花褪残红青杏小,燕子飞时,绿水人家绕.枝上柳绵吹又少.天涯何处无芳草.墙里秋千墙外道,墙外行人,墙里佳人笑.笑渐不闻声渐悄.多情却被无情恼."
   var counter = 0;
   var container = document.getElementById("text-container");
@@ -264,6 +271,12 @@ html{
       clearInterval(intervalId);
     }
   }, 200);
+
+  }
+});
+
+observer.observe(section);
+
 </script>
 <br>
 <div id="zuozhe"> ———苏轼《蝶恋花·春景》</div>
