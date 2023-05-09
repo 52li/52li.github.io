@@ -259,12 +259,12 @@ const observer = new IntersectionObserver((entries) => {
   if (entries[0].isIntersecting && !hasAnimated) {
     // 执行逐字效果代码
     hasAnimated = true;
-    var text = "花褪残红青杏小，燕子飞时，绿水人家绕。枝上柳绵吹又少，天涯何处无芳草。墙里秋千墙外道，墙外行人，墙里佳人笑。笑渐不闻声渐悄，多情却被无情恼。"
+    var text = "花褪残红青杏小，燕子飞时，绿水人家绕。<br>枝上柳绵吹又少，天涯何处无芳草。<br>墙里秋千墙外道，墙外行人，墙里佳人笑。<br>笑渐不闻声渐悄，多情却被无情恼。"
     var counter = 0;
     var container = document.getElementById("text-container");
     var intervalId = setInterval(function() {
       if(counter <= text.length) {
-        container.innerText = text.substring(0, counter);
+        container.innerHTML = text.substring(0, counter);
         counter++;
       } else {
         clearInterval(intervalId);
