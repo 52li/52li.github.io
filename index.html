@@ -79,7 +79,7 @@ body{
 }
 @media only screen and (max-width: 600px) {
   body {
-    background-size:300%;
+    background-size:360%;
   }
 }
 
@@ -253,33 +253,31 @@ html{
 <div id="text-container"></div>
 <div id="kaishi"></div>
 <script>
-  const section = document.querySelector('#kaishi');
-
+  let hasAnimated = false; // 标志变量，用于检测逐字动画是否已经执行过
+const section = document.querySelector('#kaishi');
 const observer = new IntersectionObserver((entries) => {
-  if (entries[0].isIntersecting) {
+  if (entries[0].isIntersecting && !hasAnimated) {
     // 执行逐字效果代码
-    
-  var text = "花褪残红青杏小,燕子飞时,绿水人家绕.枝上柳绵吹又少.天涯何处无芳草.墙里秋千墙外道,墙外行人,墙里佳人笑.笑渐不闻声渐悄.多情却被无情恼."
-  var counter = 0;
-  var container = document.getElementById("text-container");
-  
-  var intervalId = setInterval(function() {
-    if(counter <= text.length) {
-      container.innerText = text.substring(0, counter);
-      counter++;
-    } else {
-      clearInterval(intervalId);
-    }
-  }, 200);
-
+    hasAnimated = true;
+    var text = "花褪残红青杏小，燕子飞时，绿水人家绕。枝上柳绵吹又少，天涯何处无芳草。墙里秋千墙外道，墙外行人，墙里佳人笑。笑渐不闻声渐悄，多情却被无情恼。"
+    var counter = 0;
+    var container = document.getElementById("text-container");
+    var intervalId = setInterval(function() {
+      if(counter <= text.length) {
+        container.innerText = text.substring(0, counter);
+        counter++;
+      } else {
+        clearInterval(intervalId);
+        hasAnimated = false; // 逐字效果完成后，将标志变量置为false，以便下一次重复执行
+      }
+    }, 200);
   }
 });
 
 observer.observe(section);
-
 </script>
 <br>
-<div id="zuozhe"> ———苏轼《蝶恋花·春景》</div>
+<div id="zuozhe"> ———苏轼《蝶恋花·春景》</div><br>
 <a href="https://so.gushiwen.cn/shiwenv_69a11cbab0b4.aspx">></a>
 
 <div id="triangle"></div>
